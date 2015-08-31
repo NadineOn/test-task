@@ -1,0 +1,28 @@
+{
+  "name": "visa-travel",
+  "version": "1.0.1",
+  "description": "Visa travel",
+  "repository": {},
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.7.13",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^2.0.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-watch": "^4.3.1",
+    "imagemin-pngquant": "^4.1.0",
+    "rimraf": "^2.4.2",
+    "gulp-rimraf": "^0.1.1",
+    "gulp-changed": "^1.2.1",
+    "gulp-symlink": "^2.1.2",
+    "merge-stream": "^0.1.8",
+    "gulp-plumber": "^1.0.1"
+  }
+}

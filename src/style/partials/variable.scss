@@ -1,0 +1,28 @@
+//colors
+$black: #000;
+$white: #fff;
+$blue: #194594;
+
+//fonts
+$dearJoe6: 'dearJoe6', sans-serif;
+$KobzarKS: 'KobzarKS', sans-serif;
+$MyriadProLight: 'MyriadPro-Light', sans-serif;
+$MyriadProRegular: 'MyriadPro-Regular', sans-serif;
+
+@mixin underline {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
