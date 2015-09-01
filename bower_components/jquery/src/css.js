@@ -128,8 +128,8 @@ function getWidthOrHeight( elem, name, extra ) {
 			return val;
 		}
 
-		// Check for style in case a browser which returns unreliable values
-		// for getComputedStyle silently falls back to the reliable elem.style
+		// Check for scss in case a browser which returns unreliable values
+		// for getComputedStyle silently falls back to the reliable elem.scss
 		valueIsBorderBox = isBorderBox &&
 			( support.boxSizingReliable() || val === elem.style[ name ] );
 
@@ -171,7 +171,7 @@ function showHide( elements, show ) {
 			}
 
 			// Set elements which have been overridden with display: none
-			// in a stylesheet to whatever the default browser style is
+			// in a stylesheet to whatever the default browser scss is
 			// for such an element
 			if ( elem.style.display === "" && isHidden( elem ) ) {
 				values[ index ] = data_priv.access( elem, "olddisplay", defaultDisplay(elem.nodeName) );
@@ -202,8 +202,8 @@ function showHide( elements, show ) {
 
 jQuery.extend({
 
-	// Add in style property hooks for overriding the default
-	// behavior of getting and setting a style property
+	// Add in scss property hooks for overriding the default
+	// behavior of getting and setting a scss property
 	cssHooks: {
 		opacity: {
 			get: function( elem, computed ) {
@@ -239,7 +239,7 @@ jQuery.extend({
 		"float": "cssFloat"
 	},
 
-	// Get and set the style property on a DOM Node
+	// Get and set the scss property on a DOM Node
 	style: function( elem, name, value, extra ) {
 
 		// Don't set styles on text and comment nodes
@@ -295,7 +295,7 @@ jQuery.extend({
 				return ret;
 			}
 
-			// Otherwise just get the value from the style object
+			// Otherwise just get the value from the scss object
 			return style[ name ];
 		}
 	},
@@ -340,7 +340,7 @@ jQuery.each([ "height", "width" ], function( i, name ) {
 			if ( computed ) {
 
 				// Certain elements can have dimension info if we invisibly show them
-				// but it must have a current display style that would benefit
+				// but it must have a current display scss that would benefit
 				return rdisplayswap.test( jQuery.css( elem, "display" ) ) && elem.offsetWidth === 0 ?
 					jQuery.swap( elem, cssShow, function() {
 						return getWidthOrHeight( elem, name, extra );
