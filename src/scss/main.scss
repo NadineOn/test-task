@@ -1,6 +1,9 @@
 @import "../../bower_components/normalize.css/normalize.css";
 
+@import "mixins";
 @import "variable";
 @import "fonts";
 @import "template";
 @import "comments";
+@import "article";
+@import "adaptive";

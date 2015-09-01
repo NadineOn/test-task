@@ -1,0 +1,36 @@
+@include large {
+  html {
+    font-size: 62.5%;
+  }
+  .wrapper_adaptive {
+    max-width: 940px;
+  }
+}
+
+@include middle {
+  html {
+    font-size: 45%;
+  }
+  .wrapper_adaptive {
+    max-width: 96%;
+  }
+  .header_adaptive {
+    width: 100%;
+    background-size: cover!important;
+  }
+  .article {
+    &__title {
+      &:before {
+        top: -6px;
+      }
+    }
+    &__img {
+      .article-img-link {
+        margin: 0 0 2.2rem;
+        float: none;
+        max-width: auto;
+      }
+    }
+  }
+}
+

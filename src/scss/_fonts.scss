@@ -1,15 +1,17 @@
 @mixin font($font-family, $url, $font-weight, $font-style){
   @font-face {
     font-family: '#{$font-family}';
-    src: url('../fonts/#{$url}/#{$url}.eot') format('#embedded-opentype'),
-    url('../fonts/#{$url}/#{$url}.svg#webfontOkKwgGFT') format('svg'),
+    src: local('☺'),
+    url('../fonts/#{$url}/#{$url}.eot'),
     url('../fonts/#{$url}/#{$url}.woff') format('woff'),
-    url('../fonts/#{$url}/#{$url}.ttf') format('truetype');
+    url('../fonts/#{$url}/#{$url}.ttf') format('truetype'),
+    url('../fonts/#{$url}/#{$url}.svg') format('svg');
     font-weight: $font-weight;
     font-style: $font-style;
   }
 }
 
 @include font('Stag Book', 'Stag-Book', 400, normal);
-@include font('Stag Medium', 'Stag-Medium', 500, normal);
+@include font('Stag BookItalic', 'Stag-BookItalic', 400, normal);
+@include font('Stag Medium', 'Stag-Medium', 300, normal);
 @include font('Stag Semibold', 'Stag-Semibold', 600, normal);

@@ -15,3 +15,24 @@
     clear: both;
   }
 }
+
+@mixin transition($args) {
+  transition: $args;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+}
+
+@mixin large {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin middle {
+  @media (max-width: 767px)  {
+    @content;
+  }
+}
+

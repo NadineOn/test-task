@@ -1,0 +1,75 @@
+.article {
+  &__title {
+    font-family: $StagSemibold;
+    font-size: 3rem;
+    margin: 0 0 1.3rem;
+    position: relative;
+    &:before {
+      content: '';
+      background: url(../img/sprite.png) 0 0 no-repeat;
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      top: 0;
+      left: -5.5rem;
+    }
+  }
+  &__date {
+    color: $grayLight;
+    font-family: $StagMedium;
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+  }
+  p {
+    margin: 0 0 2.2rem;
+  }
+  &__img {
+    @include clearfix;
+    [data-name]  {
+      display: block;
+      float: left;
+      margin: 0 2.5rem 0 -8rem;
+      position: relative;
+      max-width: 365px;
+      line-height: 0;
+      text-align: center;
+      img {
+        width: 100%;
+      }
+      &:before {
+        content: '';
+        background: url(../img/sprite.png) -32px 0 no-repeat;
+        width: 64px;
+        height: 40px;
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        margin: -20px 0 0 -32px;
+        @include opacity(0);
+        @include transition(opacity .3s ease);
+      }
+
+      &:after {
+        content: attr(data-name);
+        background: rgba(0,0,0, .5);
+        height: 12.2%;
+        width: 94%;
+        position: absolute;
+        top: 4%;
+        left: 3%;
+        z-index: 1;
+        color: $gray;
+        padding: 53% 0 0;
+        font: 13px $StagBookItalic;
+        @include opacity(0);
+        @include transition(opacity .5s ease);
+      }
+      &:hover {
+        &:after, &:before {
+          @include opacity(1);
+        }
+      }
+    }
+  }
+}
