@@ -10,14 +10,15 @@ initComments(countOffset);
 
 function initComments(countOff) {
     $.ajax({
-        url: 'http://frontend-test.pingbull.com/pages/nadyaonishchenko@gmail.com/comments?count='+count+'&offset='+countOff+'',
+        url: 'http://frontend-test.pingbull.com/pages/nadyaonishchenko@gmail.com/comments',
         type: 'GET',
         dateType: 'json',
-//            data: {
-//                _method: 'DELETE'
-//            },
+        data: {
+            count : count,
+            offset: countOff
+        },
         success: function(data){
-            comm = $.map(data, function(value, index){
+            comm = $.map(data, function(value){
                 return value;
             });
 
