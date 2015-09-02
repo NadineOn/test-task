@@ -1,3 +1,4 @@
 //= ../vendor/jquery/dist/jquery.min.js
 
-//= partials/script.js
+//= partials/comments.js
+//= partials/comments_controls.js

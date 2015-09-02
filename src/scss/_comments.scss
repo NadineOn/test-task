@@ -1,0 +1,196 @@
+.comment {
+  padding: 3rem 0 0;
+  &__title {
+    font-family: $StagSemibold;
+    font-size: 3rem;
+    margin: 0;
+  }
+  & > &__row {
+    padding: 4rem 0 10px;
+  }
+  &__row {
+    @include clearfix;
+    padding: 20px 0 10px;
+    border-bottom: 2px solid $gray;
+    &_list {
+      border: none;
+      .comm-data-wrapper {
+        padding: 0 0 15px;
+        position: relative;
+      }
+      .comment-form {
+        margin: 20px 0 0;
+        padding: 3rem 0 0;
+        position: relative;
+      }
+    }
+  }
+}
+
+.comment-form {
+  @include clearfix;
+  & > .controls {
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include clearfix;
+
+    .controls__item_close {
+      float: right;
+    }
+
+  }
+}
+
+.comm-data {
+  float: right;
+  width: 86%;
+  &__user {
+    font-family: $StagMedium;
+    font-size: 1.7rem;
+    padding: 0 10px 0 0;
+  }
+  &__date {
+    font-size: 1.5rem;
+    color: $grayLight;
+    &:before {
+      font-family: $FontAwesome;
+      font-size: 1.5rem;
+      text-rendering: auto;
+      margin: 0 4px 0 0;
+      content: '\f017'
+    }
+  }
+  p {
+    padding: 1rem 0;
+    margin: 0;
+  }
+  & > .controls {
+    bottom: -5px;
+    left: 0;
+  }
+}
+
+.comm-avatar {
+  float: left;
+  width: 11.4%;
+  &__user {
+    border: 2px solid $grayForms;
+    border-radius: 5px;
+    padding: 2px;
+    background: $white;
+    line-height: 0;
+    max-width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 3px;
+    }
+  }
+}
+.form-field {
+  width: 100%;
+  border: 2px solid $grayForms;
+  border-radius: 6px;
+  margin: 0 0 10px;
+  padding: 2px;
+  background: $white;
+  resize: none;
+  outline: none;
+  padding: 1.1rem 1.5rem;
+  height: 88px;
+  @include placeholder(#d9d9d9);
+  font-family: $StagMedium;
+  line-height: 2rem;
+}
+.form-send {
+  display: block;
+  float: right;
+  background: $yellow;
+  text-align: center;
+  font-family: $StagMedium;
+  font-size: 1.7rem;
+  line-height: 4.4rem;
+  padding: 0 5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  outline: none;
+}
+
+.load-more {
+  position: relative;
+  text-align: center;
+  margin: 4rem 0 0;
+  &:before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    top: 19px;
+    z-index: 1;
+    background: $gray;
+  }
+  &__frame {
+    border-left: 10px soid $white;
+    border-right: 10px soid $white;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    z-index: 5;
+  }
+}
+.more-btn {
+  display: block;
+  padding: 0 3rem;
+  border: 2px solid $gray;
+  background: $white;
+  padding: 0 40px;
+  height: 40px;
+  line-height: 38px;
+  color: $grayLight;
+  cursor: pointer;
+}
+
+.controls {
+  position: absolute;
+  display: none;
+  &.vis {
+    display: block;
+  }
+  &__item {
+    display: inline-block;
+    vertical-align: baseline;
+    margin: 0 10px 0 0;
+    position: relative;
+    cursor: pointer;
+    font-family: $StagBook;
+    font-size: 1.5rem;
+    color: $grayLight;
+    &__data {
+      font-family: $StagMedium;
+    }
+    &:before {
+      font-family: $FontAwesome;
+      font-size: 1.5rem;
+      text-rendering: auto;
+      margin: 0 4px 0 0;
+    }
+    &_edit::before {
+      content: '\f044';
+    }
+    &_reply::before {
+      content: '\f112'
+    }
+    &_delete::before, &_close::before {
+      content: '\f00d'
+    }
+    &_forward {
+      cursor: default;
+      &:before {
+        content: '\f064'
+      }
+    }
+  }
+}

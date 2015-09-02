@@ -36,3 +36,32 @@
   }
 }
 
+@mixin small {
+  @media (max-width: 550px)  {
+    @content;
+  }
+}
+
+@mixin placeholder($color) {
+  &::-moz-placeholder {
+    text-overflow: ellipsis;
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    text-overflow: ellipsis;
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    text-overflow: ellipsis;
+    color: $color;
+  }
+  &:focus::-moz-placeholder {
+    color: transparent;
+  }
+  &:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  &:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+}

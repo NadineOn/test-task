@@ -1,0 +1,74 @@
+<div class="comment">
+
+    <h2 class="comment__title">Leave comment:</h2>
+
+    <div class="comment__row">
+        <div class="comm-avatar">
+            <div class="comm-avatar__user">
+                <img src="img/user.jpg" alt="User name" >
+            </div>
+        </div>
+        <div class="comm-data">
+            <form action="" class="comment-form">
+                <textarea class="form-field" placeholder="Your message"></textarea>
+                <input class="form-send" type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+
+    <div class="comment__row comment__row_list">
+        <div class="comm-avatar">
+            <div class="comm-avatar__user">
+                <img src="img/user.jpg" alt="User name" >
+            </div>
+        </div>
+        <div class="comm-data">
+            <div class="comm-data-wrapper">
+                <span class="comm-data__user">Kurt Thompson</span>
+                <span class="comm-data__date">2015-07-06 at  13:57</span>
+                <p>If not everyone makes money blogging, why is blogging so popular?</p>
+
+                <!--position of controls-->
+                <div class="controls">
+                    <span class="controls__item controls__item_edit">Edit</span>
+                    <span class="controls__item controls__item_delete">Delete</span>
+                    <span class="controls__item controls__item_reply">Reply</span>
+                </div>
+            </div>
+
+            <form action="" class="comment-form">
+                <div class="controls">
+                    <span class="controls__item controls__item_forward">User name</span>
+                    <span class="controls__item controls__item_close">Close</span>
+                </div>
+                <textarea class="form-field" placeholder="Your message"></textarea>
+                <input class="form-send" type="submit" value="Send">
+            </form>
+
+            <!--children comment-->
+            <div class="comment__row comment__row_list">
+                <div class="comm-avatar">
+                    <div class="comm-avatar__user">
+                        <img src="img/user.jpg" alt="User name" >
+                    </div>
+                </div>
+                <div class="comm-data">
+                    <div class="comm-data-wrapper">
+                        <span class="comm-data__user">Kurt Thompson</span>
+                        <span class="controls__item controls__item_forward">User name</span>
+                        <span class="comm-data__date">2015-07-06 at  13:57</span>
+                        <p>If not everyone makes money blogging, why is blogging so popular?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="load-more">
+    <div class="load-more__frame"><div class="more-btn">Load more comments</div></div>
+</div>
+
+
+

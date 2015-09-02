@@ -40,5 +40,5 @@ body {
   padding: 4.4rem 8rem 6rem;
   position: relative;
   z-index: 5;
-  @extend .wrapper_adaptive;
+  max-width: 940px;
 }

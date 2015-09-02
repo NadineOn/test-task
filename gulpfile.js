@@ -2,6 +2,7 @@
 
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
+    jade = require('gulp-jade'),
     changed = require('gulp-changed'),
     prefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
@@ -22,7 +23,9 @@ var path = {
         img: 'build/img/',
         fonts: 'build/fonts/',
         vendor: 'build/vendor/',
-        vendor_symlink: 'src/vendor'
+        vendor_symlink: 'src/vendor',
+        jade: 'build/templates'
+
     },
     src: {
         html: 'src/*.html',
@@ -31,14 +34,18 @@ var path = {
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*',
         vendor: 'bower_components/**/*',
-        vendor_symlink: 'bower_components'
+        vendor_symlink: 'bower_components',
+        jade: 'src/jade/*.jade'
     },
     watch: {
         html: 'src/**/*.html',
         js: 'src/js/**/*.js',
         style: 'src/scss/*.scss',
         img: 'src/img/**/*.*',
-        fonts: 'src/fonts/**/*.*'
+        fonts: 'src/fonts/**/*.*',
+        vendor: 'bower_components/**/*',
+        vendor_symlink: 'bower_components',
+        jade: 'src/jade/*.jade'
     },
     clean: './build'
 };
@@ -65,6 +72,20 @@ gulp.task('clean', function (cb) {
 gulp.task('symlink', function (cb) {
     gulp.src(path.src.vendor_symlink)
         .pipe(symlink(path.build.vendor_symlink, {force: true}));
+});
+
+gulp.task('templates:build', function() {
+    var htmlOutput = {
+        name: 'Forbes Lindesay',
+        twitter: '@ForbesLindesay',
+        blog: 'forbeslindesay.co.uk'
+    };
+
+    gulp.src(path.src.jade)
+        .pipe(jade({
+            locals: htmlOutput
+        }))
+        .pipe(gulp.dest(path.build.jade))
 });
 
 gulp.task('vendor:build', function() {
@@ -122,13 +143,14 @@ gulp.task('fonts:build', function() {
 });
 
 gulp.task('build', [
-    'symlink',
+    //'symlink',
     'vendor:build',
     'html:build',
     'js:build',
     'style:build',
     'fonts:build',
-    'image:build'
+    'image:build',
+    'templates:build'
 ]);
 
 
@@ -138,6 +160,7 @@ gulp.task('watch', function(){
     gulp.watch(path.watch.js, ['js:build']);
     gulp.watch(path.watch.img, ['image:build']);
     gulp.watch(path.watch.fonts, ['fonts:build']);
+    gulp.watch(path.watch.jade, ['templates:build']);
 });
 
 

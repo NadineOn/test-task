@@ -1,18 +1,14 @@
+//desktop
 @include large {
   html {
     font-size: 62.5%;
   }
-  .wrapper_adaptive {
-    max-width: 940px;
-  }
 }
 
+//tablet + mobile
 @include middle {
   html {
     font-size: 45%;
-  }
-  .wrapper_adaptive {
-    max-width: 96%;
   }
   .header_adaptive {
     width: 100%;
@@ -26,6 +22,29 @@
         max-width: auto;
       }
     }
+  }
+  .more-btn {
+    padding: 0 2rem;
+  }
+}
+
+//mobile
+@include small {
+  .article__title:before {
+    display: none;
+  }
+  .comm-data, .comm-avatar {
+    width: 100%;
+    float: none;
+  }
+  .comm-avatar {
+    margin: 0 0 5px;
+    &__user {
+      max-width: 50px;
+    }
+  }
+  .wrapper {
+    padding: 4rem 3rem;
   }
 }
 
