@@ -15,3 +15,17 @@
 @include font('Stag BookItalic', 'Stag-BookItalic', 400, normal);
 @include font('Stag Medium', 'Stag-Medium', 300, normal);
 @include font('Stag Semibold', 'Stag-Semibold', 600, normal);
+
+$fontAwesomePath: '../vendor/font-awesome-sass/assets/fonts/font-awesome/fontawesome-webfont';
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: local('☺'),
+  url('#{$fontAwesomePath}.eot'),
+  url('#{$fontAwesomePath}.woff') format('woff'),
+  url('#{$fontAwesomePath}.woff2') format('woff2'),
+  url('#{$fontAwesomePath}.ttf') format('truetype'),
+  url('#{$fontAwesomePath}.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
