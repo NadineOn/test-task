@@ -10,8 +10,13 @@
         </div>
         <div class="comm-data">
             <form action="" class="comment-form">
+                <div class="controls">
+                    <span class="controls__item controls__item_forward">User name</span>
+                    <span class="controls__item controls__item_close">Close</span>
+                </div>
+
                 <textarea class="form-field" placeholder="Your message"></textarea>
-                <input class="form-send" type="submit" value="Send">
+                <div class="form-send controls__item controls__item_add" data-action="add">Send</div>
             </form>
         </div>
     </div>
@@ -24,9 +29,9 @@
 
 <!--position of controls-->
 <div class="controls controls_own-comment">
-    <span class="controls__item controls__item_edit">Edit</span>
-    <span class="controls__item controls__item_delete">Delete</span>
-    <span class="controls__item controls__item_reply">Reply</span>
+    <span class="controls__item controls__item_edit" data-action="edit">Edit</span>
+    <span class="controls__item controls__item_delete" data-action="delete">Delete</span>
+    <span class="controls__item controls__item_reply" data-action="reply">Reply</span>
 </div>
 
 

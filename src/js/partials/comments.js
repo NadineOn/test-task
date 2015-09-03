@@ -3,14 +3,16 @@ var comm,
     countOffset =0,
     commBlock = $('.comment'),
     controlsOwnComm = $('.controls_own-comment').html(),
-    addMore = $('.more-btn'),
+    commentForm = $('.comment-form'),
+    //url = 'http://frontend-test.pingbull.com/pages/nadyaonishchenko@gmail.com/comments',
+    url = 'data.json', //local file
     ownerId = 1; // user owner id
 
 initComments(countOffset);
 
 function initComments(countOff) {
     $.ajax({
-        url: 'http://frontend-test.pingbull.com/pages/nadyaonishchenko@gmail.com/comments',
+        url: url,
         type: 'GET',
         dateType: 'json',
         data: {
@@ -33,7 +35,7 @@ function initComments(countOff) {
 
 function pushToList(i) {
     var placeHtml =
-        '<div class="comment__row comment__row_list">' +
+        '<div class="comment__row comment__row_list" data-id="'+comm[i]['id']+'">' +
             '<div class="comm-avatar">' +
                 '<div class="comm-avatar__user">' +
                     '<img src="'+comm[i]['author']['avatar']+'">' +

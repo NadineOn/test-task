@@ -3,25 +3,30 @@
   &__title {
     font-family: $StagSemibold;
     font-size: 3rem;
-    margin: 0;
+    margin: 0 0 4rem;
   }
   & > &__row {
-    padding: 4rem 0 10px;
+    padding: 0;
+    margin: 0 0 4rem;
   }
   &__row {
     @include clearfix;
     padding: 20px 0 10px;
+    margin: 0;
     border-bottom: 2px solid $gray;
     &_list {
       border: none;
+      margin: 0;
       .comm-data-wrapper {
-        padding: 0 0 15px;
+        padding: 0 0 5px;
         position: relative;
       }
       .comment-form {
-        margin: 20px 0 0;
         padding: 3rem 0 0;
         position: relative;
+      }
+      .comment__row_list:nth-last-child(1) {
+        padding-bottom: 0;
       }
     }
   }
@@ -108,8 +113,9 @@
   float: right;
   background: $yellow;
   text-align: center;
-  font-family: $StagMedium;
-  font-size: 1.7rem;
+  font-family: $StagMedium!important;
+  color: $contentColor!important;
+  font-size: 1.7rem!important;
   line-height: 4.4rem;
   padding: 0 5rem;
   border: none;
